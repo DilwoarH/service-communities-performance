@@ -1,0 +1,64 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// Import GOV.UK Frontend
+@import "node_modules/govuk-frontend/all";
+
+// Patterns that aren't in Frontend
+@import "patterns/check-your-answers";
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.govuk-box {
+	border: 1px solid govuk-colour("grey-2");
+	padding: 20px;
+	padding-bottom: 0;
+	margin-bottom: 20px;
+}
+.govuk-list--step-by-step {
+	counter-reset: step-by-step;
+	margin-top: 70px;
+}
+.govuk-list--step-by-step > li {
+	margin-bottom: 60px;
+	counter-increment: step-by-step;
+	position: relative;
+}
+.govuk-list--step-by-step > li:before {
+	content: counter(step-by-step);
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	border: 4px solid govuk-colour("grey-1");
+	display: block;
+	position: absolute;
+	left: -70px;
+	text-align: center;
+	line-height: 42px;
+	top: -5px;
+	font-size: 24px;
+	font-weight: bold;
+	z-index: 1;
+	background: white;
+}
+.govuk-list--step-by-step > li:after {
+	content: " ";
+	display: block;
+	width: 4px;
+	position: absolute;
+	background: govuk-colour("grey-1");
+	left: -48px;
+	height: 100%;
+	padding-bottom: 60px;
+	top: 0;
+	z-index: 0
+}
+.govuk-list--step-by-step > li:last-child:after {
+	display: none;
+}
