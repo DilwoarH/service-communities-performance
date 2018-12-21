@@ -62,3 +62,14 @@ $govuk-global-styles: true;
 .govuk-list--step-by-step > li:last-child:after {
 	display: none;
 }
+.govuk-grid-row--data-overview .govuk-heading-s {
+	margin-bottom: 0
+}
+.govuk-grid-row--data-overview .govuk-body--numeric {
+	font-family: "ntatabularnumbers","nta",Arial,sans-serif;
+}
+@media (min-width: 800px) {
+	.govuk-box {
+		// max-width: 66.67%
+	}
+}
