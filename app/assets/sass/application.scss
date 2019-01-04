@@ -32,32 +32,39 @@ $govuk-global-styles: true;
 }
 .govuk-list--step-by-step > li:before {
 	content: counter(step-by-step);
-	width: 40px;
-	height: 40px;
+	width: 32px;
+	height: 32px;
 	border-radius: 100%;
 	border: 4px solid govuk-colour("grey-1");
 	display: block;
-	position: absolute;
-	left: -70px;
 	text-align: center;
-	line-height: 42px;
-	top: -5px;
-	font-size: 24px;
+	@include govuk-font(24, $weight: bold, $tabular: true, $line-height: 1.8);
 	font-weight: bold;
 	z-index: 1;
 	background: white;
+	margin-bottom: 20px;
 }
-.govuk-list--step-by-step > li:after {
-	content: " ";
-	display: block;
-	width: 4px;
-	position: absolute;
-	background: govuk-colour("grey-1");
-	left: -48px;
-	height: 100%;
-	padding-bottom: 60px;
-	top: 0;
-	z-index: 0
+@include govuk-media-query($from: desktop) {
+	.govuk-list--step-by-step > li:before {
+		position: absolute;
+		left: -70px;
+		top: -5px;
+		width: 40px;
+		height: 40px;
+		margin-bottom: 0;
+	}
+	.govuk-list--step-by-step > li:after {
+		position: absolute;
+		left: -48px;
+		content: " ";
+		display: block;
+		width: 4px;
+		background: govuk-colour("grey-1");
+		height: 100%;
+		padding-bottom: 60px;
+		top: 0;
+		z-index: 0
+	}
 }
 .govuk-list--step-by-step > li:last-child:after {
 	display: none;
@@ -67,11 +74,6 @@ $govuk-global-styles: true;
 }
 .govuk-grid-row--data-overview .govuk-body--numeric {
 	font-family: "ntatabularnumbers","nta",Arial,sans-serif;
-}
-@media (min-width: 800px) {
-	.govuk-box {
-		// max-width: 66.67%
-	}
 }
 .govuk-grid-row--data-overview .govuk-grid-column-one-quarter {
 	display: flex;
@@ -83,8 +85,7 @@ $govuk-global-styles: true;
 	margin-bottom: 20px;
 }
 .govuk-grid-row--data-overview .govuk-body--numeric {
-	font-size: 36px;
-	font-weight: bold;
 	order: 1;
 	margin-bottom: 0;
+	@include govuk-font(24, $weight: bold, $tabular: true);
 }
