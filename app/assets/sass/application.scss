@@ -73,3 +73,18 @@ $govuk-global-styles: true;
 		// max-width: 66.67%
 	}
 }
+.govuk-grid-row--data-overview .govuk-grid-column-one-quarter {
+	display: flex;
+	flex-flow: column nowrap;
+}
+.govuk-grid-row--data-overview .govuk-heading-s {
+	font-weight: normal;
+	order: 2;
+	margin-bottom: 20px;
+}
+.govuk-grid-row--data-overview .govuk-body--numeric {
+	font-size: 36px;
+	font-weight: bold;
+	order: 1;
+	margin-bottom: 0;
+}
